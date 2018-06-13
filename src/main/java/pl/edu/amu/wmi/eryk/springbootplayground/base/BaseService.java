@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.eryk.springbootplayground;
+package pl.edu.amu.wmi.eryk.springbootplayground.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

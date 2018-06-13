@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.eryk.springbootplayground;
+package pl.edu.amu.wmi.eryk.springbootplayground.base;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

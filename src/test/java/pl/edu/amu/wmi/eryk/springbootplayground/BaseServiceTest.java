@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import pl.edu.amu.wmi.eryk.springbootplayground.base.Base;
+import pl.edu.amu.wmi.eryk.springbootplayground.base.BaseExt;
+import pl.edu.amu.wmi.eryk.springbootplayground.base.BaseService;
 
 /**
  * Stworzone przez Eryk Mariankowski dnia 13.06.18.
