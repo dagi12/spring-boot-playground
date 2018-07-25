@@ -12,15 +12,15 @@ import javax.annotation.PostConstruct;
  * Stworzone przez Eryk Mariankowski dnia 13.06.18.
  */
 @Configuration
-public class InitializerConfiguration implements InitializingBean{
+public class InitializerConfig implements InitializingBean {
 
 
     private final Holder holder;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(InitializerConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(InitializerConfig.class);
 
     @Autowired
-    public InitializerConfiguration(Holder holder) {
+    public InitializerConfig(Holder holder) {
         this.holder = holder;
     }
 
