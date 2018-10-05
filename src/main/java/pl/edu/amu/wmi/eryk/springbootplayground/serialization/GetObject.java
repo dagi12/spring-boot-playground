@@ -11,6 +11,10 @@ public class GetObject {
         return dupa;
     }
 
+    public void setDupa(String dupa) {
+        this.dupa = dupa;
+    }
+
     @Override
     public String toString() {
         return "GetObject{" +

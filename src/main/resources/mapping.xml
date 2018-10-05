@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://dozermapper.github.io/schema/bean-mapping"
+          xsi:schemaLocation="http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd">
+    <configuration>
+        <stop-on-errors>true</stop-on-errors>
+        <date-format>MM/dd/yyyy HH:mm</date-format>
+        <wildcard>true</wildcard>
+    </configuration>
+    <mapping>
+        <class-a>pl.edu.amu.wmi.eryk.springbootplayground.serialization.GetObjectDTO</class-a>
+        <class-b>pl.edu.amu.wmi.eryk.springbootplayground.serialization.GetObject</class-b>
+        <field>
+            <a>dupa2</a>
+            <b>dupa</b>
+        </field>
+    </mapping>
+</mappings>

@@ -28,7 +28,9 @@ dependencies {
     compile "com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8"
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'com.github.dozermapper:dozer-core:6.4.1'
+    compile 'com.github.dozermapper:dozer-spring4:6.4.1'
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile "org.postgresql:postgresql:42.2.1"
-    providedRuntime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
+//    providedRuntime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
 }

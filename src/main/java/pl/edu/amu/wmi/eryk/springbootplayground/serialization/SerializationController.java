@@ -1,5 +1,6 @@
 package pl.edu.amu.wmi.eryk.springbootplayground.serialization;
 
+import com.github.dozermapper.core.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,12 @@ public class SerializationController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SerializationController.class);
 
+    private final Mapper mapper;
+
+    public SerializationController(Mapper mapper) {
+        this.mapper = mapper;
+    }
+
     @RequestMapping("/empty")
     public ResponseEntity<EmptyObject> empty() {
         return ResponseEntity.ok(new EmptyObject());
@@ -27,23 +34,14 @@ public class SerializationController {
     }
 
     @RequestMapping("/get")
-    public GetObject get() {
-        return new GetObject();
+    public GetObjectDTO get() {
+        return mapper.map(new GetObject(), GetObjectDTO.class);
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.POST)
-    public void postGet(@RequestBody GetObject getObject) {
-        LOGGER.info(getObject.toString());
-    }
-
-    @RequestMapping("/set")
-    public SetObject set() {
-        return new SetObject();
-    }
-
-    @RequestMapping(value = "/set", method = RequestMethod.POST)
-    public void postSet(@RequestBody SetObject setObject) {
-        LOGGER.info(setObject.toString());
+    public void postGet(@RequestBody GetObjectDTO getObject) {
+        GetObject getObject1 = mapper.map(getObject, GetObject.class);
+        LOGGER.info(getObject1.toString());
     }
 
 }
