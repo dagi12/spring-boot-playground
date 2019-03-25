@@ -49,6 +49,8 @@ asciidoctor {
 }
 
 dependencies {
+    compile project(":eryk-web-server-model")
+    compile project(":eryk-web-server-common")
     compile "io.springfox:springfox-swagger-ui:${springfoxVersion}"
     compile "io.springfox:springfox-swagger2:${springfoxVersion}"
     compile "com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8"

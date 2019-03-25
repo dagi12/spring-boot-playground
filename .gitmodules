@@ -1,0 +1,6 @@
+[submodule "eryk-web-server-model"]
+	path = eryk-web-server-model
+	url = https://github.com/dagi12/eryk-web-server-model.git
+[submodule "eryk-web-server-common"]
+	path = eryk-web-server-common
+	url = https://github.com/dagi12/eryk-web-server-common.git

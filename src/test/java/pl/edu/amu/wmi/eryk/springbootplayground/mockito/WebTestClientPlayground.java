@@ -16,7 +16,8 @@ import static org.mockito.Mockito.when;
  * Created by erykmariankowski on 15.10.2018.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 public class WebTestClientPlayground {
 
     @MockBean

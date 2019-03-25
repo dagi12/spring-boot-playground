@@ -1,1 +1,4 @@
 rootProject.name = 'spring-boot-playground'
+
+include(":eryk-web-server-model")
+include(":eryk-web-server-common")
