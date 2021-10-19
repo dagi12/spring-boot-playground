@@ -6,9 +6,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * Stworzone przez Eryk Mariankowski dnia 18.06.18.
@@ -47,8 +53,26 @@ public class SerializationController {
     }
 
     @GetMapping(value = "/locale")
-    public Locale asd() {
-        return LocaleContextHolder.getLocale();
+    public TomcatInto asd() {
+        TimeZone aDefault = TimeZone.getDefault();
+        LOGGER.info(aDefault.toString());
+        return new TomcatInto(LocaleContextHolder.getLocale(), aDefault);
+    }
+
+    @PostMapping("/date")
+    public GetObjectDTO date(@RequestBody GetObjectDTO dto) {
+        LOGGER.info(String.valueOf(dto.getDate()));
+        return dto;
+    }
+
+    public class TomcatInto {
+        public Locale locale;
+        public TimeZone timeZone;
+
+        public TomcatInto(Locale locale, TimeZone aDefault) {
+            this.locale = locale;
+            this.timeZone = aDefault;
+        }
     }
 
 }

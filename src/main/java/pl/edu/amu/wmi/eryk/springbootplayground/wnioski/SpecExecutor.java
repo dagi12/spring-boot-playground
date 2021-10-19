@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.eryk.springbootplayground.tf;
+package pl.edu.amu.wmi.eryk.springbootplayground.wnioski;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -30,7 +30,7 @@ public class SpecExecutor {
         return query.select(variableRoot);
     }
 
-    public <T> TypedQuery<T> findAllQuery(Class<T> tClass, Specification<T> spec) {
+    private <T> TypedQuery<T> findAllQuery(Class<T> tClass, Specification<T> spec) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> query = cb.createQuery(tClass);
         Root<T> root = query.from(tClass);
@@ -39,6 +39,10 @@ public class SpecExecutor {
                 .createQuery(query.where(spec.toPredicate(root, query, cb)));
     }
 
+    /**
+     * @throws javax.persistence.NoResultException        if there is no result
+     * @throws javax.persistence.NonUniqueResultException if there is more than one result
+     */
     public <T> T findOne(Class<T> tClass, Specification<T> spec) {
         return findAllQuery(tClass, spec).getSingleResult();
     }
